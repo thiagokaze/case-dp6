@@ -49,7 +49,7 @@ for(var item of download_link){
 
 for(var item of analise_link){
   item.addEventListener('click', function(event){
-    event.preventDefault();
+
     ga('send', {
       hitType: 'event',
       eventCategory: 'analise',
@@ -59,13 +59,11 @@ for(var item of analise_link){
   });
 }
 
-if(form.lenght > 0){
-  console.log(form)
+
   var form_fields = form[0].getElementsByTagName("input");
 
   for(var item of form_fields){
     item.addEventListener('focusout', function(event, item){
-      event.preventDefault();
       if(this.value.trim() !== ""){
         ga('send', {
           hitType: 'event',
@@ -76,7 +74,6 @@ if(form.lenght > 0){
       }
     });
   }
-}
 
 //observer para a mudanca de class do body
 var body_tag = document.body;
